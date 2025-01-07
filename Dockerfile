@@ -12,7 +12,7 @@ RUN apt-get install -y $PACKAGES
 # Update ca certs
 RUN update-ca-certificates
 
-ARG VERSION=v0.14.2
+ARG VERSION=v0.14.3
 
 # for COSMWASM_VERSION check here https://github.com/babylonchain/babylon/blob/dev/go.mod
 ARG COSMWASM_VERSION=v0.53.0
