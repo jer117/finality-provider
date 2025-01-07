@@ -33,7 +33,7 @@ RUN git clone https://github.com/CosmWasm/wasmd.git \
     && find / -name libwasmvm.x86_64.so \
     && cp $COSMWASM_PATH /usr/lib
 
-RUN git clone https://github.com/babylonchain/finality-provider.git \
+RUN git clone https://github.com/babylonlabs-io/finality-provider.git \
     && cd finality-provider \ 
     && make install 
 
@@ -50,7 +50,6 @@ RUN apt-get update && apt-get upgrade -y \
 COPY --from=go-builder /usr/lib/libwasmvm.x86_64.so /usr/lib
 COPY --from=go-builder /go/bin/eotsd /usr/bin/eotsd
 COPY --from=go-builder /go/bin/fpd /usr/bin/fpd
-COPY --from=go-builder /go/bin/fpcli /usr/bin/fpcli
 
 # Run the binary.
 CMD ["/bin/sh"]
