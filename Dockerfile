@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y git make gcc musl-dev wget ca-certifica
     && apt-get clean
 
 # renovate: datasource=github-releases depName=babylonlabs-io/babylon
-ARG VERSION=v0.14.3
+ARG VERSION=v0.15.0
 
 ARG COSMWASM_VM_VERSION=v2.1.3
 
